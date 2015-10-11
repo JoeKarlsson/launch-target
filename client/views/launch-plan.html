@@ -1,4 +1,17 @@
 <template name="launchPlan">
-  <h1>Make a Launch Plan</h1>
-  
+  <div class="row">
+    <div class="small-10 medium-9 large-7 small-centered columns">
+      <div class="header panel">
+        <div class="sign">
+          <h1>Make a Launch Plan</h1>
+        </div>
+        <p>
+          <div class="button-group" data-grouptype="OR">
+            <a id="currentPosition" href="/plan/{{_id}}/targets" class="button primary radius">Use current position</a>
+            <a id="pickPosition" href="/plan/{{_id}}/select" class="button success radius">Select position</a>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
 </template>
