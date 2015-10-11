@@ -6,4 +6,13 @@
       Geolocation failed: {{geolocationError}}
     {{/unless}}
   </div>
+  <div class="targets-list">
+    {{#each getListTargets}}
+      {{> targetListItem}}
+    {{/each}}
+  </div>
+</template>
+
+<template name='targetListItem'>
+    <p>{{name}}</p>
 </template>

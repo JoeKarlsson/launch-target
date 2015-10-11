@@ -1,5 +1,6 @@
 //Global variable for setting default zoom in google maps
 var MAP_ZOOM = 17;
+var results;
 
 //When app starts load google maps
 Meteor.startup(function() {
@@ -61,6 +62,15 @@ Template.map.onCreated(function() {
     function callback(results, status) {
       // debugger;
       if (status === google.maps.places.PlacesServiceStatus.OK) {
+
+        //helper function returns array of nearby restuarants
+        // debugger;
+        Template.map.helpers({
+          getListTargets: function() {
+              console.log(results);
+              return results;
+            }
+        });
         for (var i = 0; i < results.length; i++) {
           createMarker(results[i]);
         }
@@ -83,3 +93,4 @@ Template.map.onCreated(function() {
     }
   });
 });
+
