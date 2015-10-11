@@ -65,14 +65,17 @@ Template.map.onCreated(function() {
 
         //helper function returns array of nearby restuarants
         // debugger;
-        Template.map.helpers({
-          getListTargets: function() {
-              console.log(results);
-              return results;
-            }
-        });
+        // Template.map.helpers({
+        //   getListTargets: function() {
+        //       console.log(results);
+        //       return results;
+        //     }
+        // });
         for (var i = 0; i < results.length; i++) {
           createMarker(results[i]);
+
+          //Create target item on the DOM
+          makeTargetListItem(results[i]);
         }
       }
     }
@@ -94,3 +97,7 @@ Template.map.onCreated(function() {
   });
 });
 
+//Call's targets-list and appends a div for each instance of a resturant
+function makeTargetListItem(targetItem) {
+  $('.targets-list').append($("<div>", {html : targetItem.name}));
+}
