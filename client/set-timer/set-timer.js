@@ -46,8 +46,8 @@ Template.atTimeTemplate.events({
     if (ampm == 'PM') {
       hrs = Number(hrs) + 12;
     };
-    IT.inputIn = ((Number(hrs) * 60) + Number(mins)) * 60
-    IT.lunchtime = IT.inputIn + IT.now();
+    IT.lunchtime = ((Number(hrs) * 60) + Number(mins)) * 60
+    IT.inputIn = IT.lunchtime - IT.now();
     console.log(hrs);
     console.log(mins);
     console.log(IT.inputIn);
