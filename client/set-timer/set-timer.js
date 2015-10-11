@@ -61,15 +61,16 @@ Template.atTimeTemplate.events({
   'click .deploy' : function(event, template) {
     event.preventDefault();
     var now = UI._globalHelpers.thisMoment();
-    var ampm = $('.attime').val().substring(6,8);
+    var ampm = $('.attime').val().substring(6, 8);
     var hrs = ($('.attime').val().substring(0, 2));
     var mins = ($('.attime').val().substring(3, 5));
     if (ampm == 'PM') {
       hrs = Number(hrs) + 12;
     };
+    var launchTarget = (((Number(hrs) * 60) + Number(mins)) * 60);
     Launches.update({_id : this._id},
-      { $set : { lunchtime : (((Number(hrs) * 60) + Number(mins)) * 60)} });
-    var inputIn = this.lunchtime - now;
+      { $set : { lunchtime : launchTarget} });
+    var inputIn = launchTarget - now;
     if(inputIn < 900 || inputIn > 14400) {
       alert('please plan between 15 minutes and 4 hours');
     } else {
