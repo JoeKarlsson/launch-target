@@ -1,6 +1,7 @@
 Router.configure({
     layoutTemplate: 'layout'
-  });
+});
+
 Router.route('/', { name: 'initializePlan' });
 
 Router.route('/plan/:_id', {
