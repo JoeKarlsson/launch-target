@@ -1,3 +1,17 @@
+<template name="setTimeTemplate">
+  <ul class="button-group round even-2">
+    <li><button id="inTimeSwitch" class="button secondary">Set Launch In</button></li>
+    <li><button id="atTimeSwitch" class="button secondary">Set Launch At</button></li>
+  </ul>
+
+  {{#if inTimeSwitchSelected}}
+    {{> inTimeTemplate}}
+  {{else}}
+    {{> atTimeTemplate}}
+  {{/if}}
+
+</template>
+
 <template name='inTimeTemplate'>
   <input type="text" data-field="time" data-view="Dropdown" readonly class="intime" placeholder="have lunch in ...">
   <div id="dtBox"></div>

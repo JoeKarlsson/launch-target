@@ -5,6 +5,25 @@ IT = {};
 //   // thing2 : function(){}
 // });
 
+Template.setTimeTemplate.helpers({
+  inTimeSwitchSelected : function() {
+    return Session.get('inTimeSwitchSelected');
+  }
+});
+
+Template.setTimeTemplate.created = function() {
+  Session.set('inTimeSwitchSelected', true);
+}
+
+Template.setTimeTemplate.events({
+  'click #inTimeSwitch' : function() {
+    Session.set('inTimeSwitchSelected', true)
+  },
+  'click #atTimeSwitch' : function() {
+    Session.set('inTimeSwitchSelected', false)
+  }
+});
+
 Template.inTimeTemplate.rendered = function() {
   $('#dtBox').DateTimePicker({
     minTime : '00:15',
@@ -22,7 +41,7 @@ Template.inTimeTemplate.events({
     var mins = ($('.intime').val().substring(3, 5));
     IT.inputIn = ((Number(hrs) * 60) + Number(mins)) * 60
     IT.lunchtime = IT.inputIn + IT.now();
-    // Router.go('/play');
+    Router.go('/play');
   }
 })
 
@@ -48,9 +67,11 @@ Template.atTimeTemplate.events({
     };
     IT.lunchtime = ((Number(hrs) * 60) + Number(mins)) * 60
     IT.inputIn = IT.lunchtime - IT.now();
-    console.log(hrs);
-    console.log(mins);
-    console.log(IT.inputIn);
-    // Router.go('/play');
+    if(IT.inputIn < 900 || IT.inputIn > 14400) {
+      alert('please plan between 15 minutes and 4 hours');
+    } else {
+      alert('Launch set in T-' + IT.inputIn + 'seconds');
+      Router.go('/play');
+    }
   }
 })
