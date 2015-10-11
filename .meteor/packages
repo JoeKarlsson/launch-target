@@ -18,7 +18,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
-modweb:flipclock
 momentjs:moment
 matthew:foundation5-sass
 iron:router
+mrt:meteor-flipclockjs

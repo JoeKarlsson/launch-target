@@ -1,4 +1,7 @@
 Router.configure({
     layoutTemplate: 'layout'
   })
-  .route('/', { name: 'launchPlan' })
+  .route('/', { name: 'selfTimer' })
+
+
+Router.route('/play', { name: 'launchTimer'});

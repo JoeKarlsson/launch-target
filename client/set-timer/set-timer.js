@@ -1,3 +1,5 @@
+var IT = {};
+
 Template.selfTimer.helpers({
   // thing1 : function(){},
   // thing2 : function(){}
@@ -6,8 +8,12 @@ Template.selfTimer.helpers({
 Template.selfTimer.events({
   'click .deploy' : function(event, template) {
     event.preventDefault();
-    var now = ((moment().hours() * 60) + moment().minutes()) * 60;
-    var inputIn = $('.intime').val() * 60;
-    var lunchtime = inputIn + now;
+    IT.now = ((moment().hours() * 60) + moment().minutes()) * 60;
+    IT.inputIn = $('.intime').val() * 60;
+    IT.lunchtime = IT.inputIn + IT.now;
+    console.log(IT.now);
+    console.log(IT.lunchtime);
+    console.log(IT.lunchtime - IT.now);
+    Router.go('/play');
   }
 })
