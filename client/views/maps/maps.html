@@ -12,6 +12,7 @@
             Geolocation failed: {{geolocationError}}
           {{/unless}}
         </div>
+        <a href="#" id="gotoSetTime" class="button success" disabled>Set Launch Time</a>
         <div class="targets-list">
           {{#each allTargets}}
             {{> targetListItem}}
@@ -23,7 +24,9 @@
 </template>
 
 <template name='targetListItem'>
-  <div data-alert="" class="alert-box secondary">
+  <div small-12 medium-6 large-6 columns data-alert="" class="alert-box secondary">
     {{name}}
+    <!-- <input type="checkbox" value="{{include}}"> -->
+    <div class="styled-checkbox"></div>
   </div>
 </template>
