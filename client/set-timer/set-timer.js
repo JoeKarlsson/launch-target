@@ -41,7 +41,7 @@ Template.inTimeTemplate.events({
     var mins = ($('.intime').val().substring(3, 5));
     IT.inputIn = ((Number(hrs) * 60) + Number(mins)) * 60
     IT.lunchtime = IT.inputIn + IT.now();
-    Router.go('/play');
+    Router.go('/launch/:_id');
   }
 })
 
@@ -71,7 +71,7 @@ Template.atTimeTemplate.events({
       alert('please plan between 15 minutes and 4 hours');
     } else {
       alert('Launch set in T-' + IT.inputIn + 'seconds');
-      Router.go('/play');
+      Router.go('/launch/:_id');
     }
   }
 })
