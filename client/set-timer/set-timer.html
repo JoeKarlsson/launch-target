@@ -1,5 +1,10 @@
-<template name='selfTimer'>
+<template name='inTimeTemplate'>
   <input type="text" data-field="time" data-view="Dropdown" readonly class="intime" placeholder="have lunch in ...">
+  <div id="dtBox"></div>
+  <button class="deploy">DEPLOY</button>
+</template>
+
+<template name='atTimeTemplate'>
   <input type="text" data-field="time" class="attime" readonly placeholder="have lunch at...">
   <div id="dtBox"></div>
   <button class="deploy">DEPLOY</button>
