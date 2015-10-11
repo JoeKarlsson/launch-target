@@ -5,6 +5,15 @@ Template.selfTimer.helpers({
   // thing2 : function(){}
 });
 
+Template.selfTimer.rendered = function() {
+  $('#dtBox').DateTimePicker({
+    minTime : '00:15',
+    maxTime : '04:00',
+    minuteInterval : 5,
+    setValueInTextboxOnEveryClick : true
+  });
+};
+
 Template.selfTimer.events({
   'click .deploy' : function(event, template) {
     event.preventDefault();
