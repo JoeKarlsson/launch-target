@@ -1,9 +1,8 @@
-IT = {};
-
-// Template.NAME.helpers({
-//   // thing1 : function(){},
-//   // thing2 : function(){}
-// });
+//Session switch for swapping between
+//Launch in vs. Launch At
+Template.registerHelper('thisMoment', function() {
+   return (((moment().hours() * 60) + moment().minutes()) * 60) + moment().seconds();
+});
 
 Template.setTimeTemplate.helpers({
   inTimeSwitchSelected : function() {
@@ -11,6 +10,8 @@ Template.setTimeTemplate.helpers({
   }
 });
 
+
+//init Session to inTime show
 Template.setTimeTemplate.created = function() {
   Session.set('inTimeSwitchSelected', true);
 }
@@ -36,12 +37,13 @@ Template.inTimeTemplate.rendered = function() {
 Template.inTimeTemplate.events({
   'click .deploy' : function(event, template) {
     event.preventDefault();
-    IT.now = function() { return ((moment().hours() * 60) + moment().minutes()) * 60};
+    var now = UI._globalHelpers.thisMoment();
     var hrs = ($('.intime').val().substring(0, 2));
     var mins = ($('.intime').val().substring(3, 5));
-    IT.inputIn = ((Number(hrs) * 60) + Number(mins)) * 60
-    IT.lunchtime = IT.inputIn + IT.now();
-    Router.go('/launch/:_id');
+    var inputIn = ((Number(hrs) * 60) + Number(mins)) * 60
+    Launches.update({_id : this._id}
+      , { $set : { lunchtime : (inputIn + now)} });
+    Router.go('launchTimer', { _id : this._id });
   }
 })
 
@@ -58,20 +60,20 @@ Template.atTimeTemplate.rendered = function() {
 Template.atTimeTemplate.events({
   'click .deploy' : function(event, template) {
     event.preventDefault();
-    IT.now = function() { return ((moment().hours() * 60) + moment().minutes()) * 60};
+    var now = UI._globalHelpers.thisMoment();
     var ampm = $('.attime').val().substring(6,8);
     var hrs = ($('.attime').val().substring(0, 2));
     var mins = ($('.attime').val().substring(3, 5));
     if (ampm == 'PM') {
       hrs = Number(hrs) + 12;
     };
-    IT.lunchtime = ((Number(hrs) * 60) + Number(mins)) * 60
-    IT.inputIn = IT.lunchtime - IT.now();
-    if(IT.inputIn < 900 || IT.inputIn > 14400) {
+    Launches.update({_id : this._id},
+      { $set : { lunchtime : (((Number(hrs) * 60) + Number(mins)) * 60)} });
+    var inputIn = this.lunchtime - now;
+    if(inputIn < 900 || inputIn > 14400) {
       alert('please plan between 15 minutes and 4 hours');
     } else {
-      alert('Launch set in T-' + IT.inputIn + 'seconds');
-      Router.go('/launch/:_id');
-    }
+      Router.go('launchTimer', { _id : this._id });
+   }
   }
 })

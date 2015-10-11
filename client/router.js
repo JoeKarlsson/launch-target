@@ -20,9 +20,15 @@ Router.route('/plan/:_id/targets', {
 });
 
 Router.route('/plan/:_id/setTime', {
-  name: 'setTimeTemplate'
+  name: 'setTimeTemplate',
+  data: function() {
+    return Launches.findOne(this.params._id);
+  }
 });
 
 Router.route('/launch/:_id', {
- name: 'launchTimer'
+ name: 'launchTimer',
+ data: function() {
+  return Launches.findOne(this.params._id);
+ }
 });
