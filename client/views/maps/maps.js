@@ -24,11 +24,16 @@ Template.map.helpers({
         zoom: MAP_ZOOM
       };
     }
+  },
+  allTargets: function () {
+    return Launches.findOne(this._id).targets;
   }
 });
 
 //Create google maps marker for current location
 Template.map.onCreated(function() {
+  var self = this;
+  console.log('self', self);
   GoogleMaps.ready('map', function(map) {
     // console.log(map);
     //get lat and long from current location
@@ -60,23 +65,15 @@ Template.map.onCreated(function() {
 
     //Error checking to check for status of query
     function callback(results, status) {
-      // debugger;
       if (status === google.maps.places.PlacesServiceStatus.OK) {
-
-        //helper function returns array of nearby restuarants
-        // debugger;
-        // Template.map.helpers({
-        //   getListTargets: function() {
-        //       console.log(results);
-        //       return results;
-        //     }
-        // });
-        for (var i = 0; i < results.length; i++) {
-          createMarker(results[i]);
-
-          //Create target item on the DOM
-          makeTargetListItem(results[i]);
-        }
+        var targets = results.map(function (target) {
+          createMarker(target);
+          var targetDetail = {
+            name: target.name,
+          };
+          return targetDetail;
+        });
+        Launches.update(self.data._id, {$set: {targets: targets}});
       }
     }
 
@@ -88,16 +85,12 @@ Template.map.onCreated(function() {
         position: place.geometry.location
       });
 
-    //event listener that loads resturant information into infowindow.
-    google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(place.name);
-      infowindow.open(map.instance, this);
-    });
+      //event listener that loads resturant information into infowindow.
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(place.name);
+        infowindow.open(map.instance, this);
+      });
+      return marker;
     }
   });
 });
-
-//Call's targets-list and appends a div for each instance of a resturant
-function makeTargetListItem(targetItem) {
-  $('.targets-list').append($("<div>", {html : targetItem.name}));
-}

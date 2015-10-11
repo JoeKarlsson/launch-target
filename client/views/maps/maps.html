@@ -1,18 +1,29 @@
 <template name='map'>
-  <div class="map-container">
-    {{#unless geolocationError}}
-      {{> googleMap name='map' options=mapOptions}}
-    {{else}}
-      Geolocation failed: {{geolocationError}}
-    {{/unless}}
-  </div>
-  <div class="targets-list">
-    {{#each getListTargets}}
-      {{> targetListItem}}
-    {{/each}}
+  <div class="row">
+    <div class="small-12 medium-10 large-10 small-centered columns">
+      <div class="header panel">
+        <div class="sign">
+          <h1>Select Target Options</h1>
+        </div>
+        <div class="map-container">
+          {{#unless geolocationError}}
+            {{> googleMap name='map' options=mapOptions}}
+          {{else}}
+            Geolocation failed: {{geolocationError}}
+          {{/unless}}
+        </div>
+        <div class="targets-list">
+          {{#each allTargets}}
+            {{> targetListItem}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <template name='targetListItem'>
-    <p>{{name}}</p>
+  <div data-alert="" class="alert-box secondary">
+    {{name}}
+  </div>
 </template>

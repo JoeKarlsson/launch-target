@@ -16,5 +16,8 @@ Router.route('/plan/:_id/select', {
 });
 
 Router.route('/plan/:_id/targets', {
-  name: 'availableTargets'
+  name: 'map',
+  data: function () {
+    return Launches.findOne(this.params._id);
+  }
 });
