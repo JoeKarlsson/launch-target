@@ -1,14 +1,29 @@
 <template name="setTimeTemplate">
-  <ul class="button-group round even-1">
-    <li><button id="inTimeSwitch" class="button secondary">Set Launch In</button></li>
-    <li><button id="atTimeSwitch" class="button secondary">Set Launch At</button></li>
-  </ul>
 
-  {{#if inTimeSwitchSelected}}
-    {{> inTimeTemplate}}
-  {{else}}
-    {{> atTimeTemplate}}
-  {{/if}}
+  <div class="row">
+    <div class="small-12 small-centered columns">
+      <ul class="button-group round toggle" data-toggle="buttons-radio">
+        <li>
+          <input type="radio" name="toggle-group" id="inTimeSwitch" class="button secondary" data-toggle="button">
+          <label for="inTimeSwitch" class="button">
+            Set Launch In
+          </label>
+        </li>
+        <li>
+          <input type="radio" name="toggle-group" id="atTimeSwitch" class="button secondary" data-toggle="button">
+          <label for="atTimeSwitch" class="button">
+            Set Launch At
+          </label>
+        </li>
+      </ul>
+
+      {{#if inTimeSwitchSelected}}
+        {{> inTimeTemplate}}
+      {{else}}
+        {{> atTimeTemplate}}
+      {{/if}}
+    </div>
+  </div>
 
 </template>
 
