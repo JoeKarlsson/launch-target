@@ -24,11 +24,11 @@ This will install the meteor executable onto your system and have you ready to u
 5. Submit a pull request :D
 
 ## Credits
-Joe Carlson
-Jessie Copeland
-Alex Anich
-Brian 'Boots'
-Nolan 'skinny fatman'
+- Joe Carlson
+- Jessie Copeland
+- Alex Anich
+- Brian 'Boots'
+- Nolan 'skinny fatman'
 
 ## License
 
