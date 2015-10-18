@@ -82,18 +82,24 @@ input[data-toggle]:checked + label:active {
 
 .icon-style  {
   color: #B4243B;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   padding:.01em .22em;
-  &:active {
-    background-color: #fff;
+  &:hover {
+    color: lighten(#B4243B, 30%);
     box-shadow: 0 0 0 5px #fff;
-    transform: scale(1.5);
-    transition: all .4s ease-in-out;
+    &:active {
+      color: #B4243B;
+      background-color: #fff;
+      box-shadow: 0 0 0 5px #fff;
+      transform: scale(1.5);
+      transition: all .4s ease-in-out;
+    }
   }
 }
 
 .setTimeLaunch {
   background-color: #333;
+  margin-top: 3.2rem;
   &:hover {
     background-color: #B4243B;
   }

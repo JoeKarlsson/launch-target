@@ -8,7 +8,7 @@ Template.pickerTemplate.events({
     * ######## HOUR EVENTS #########
     *
   */
-  'mousedown .incrementHour' : function(event, template) {
+  'click .incrementHour' : function(event, template) {
     event.preventDefault();
 
     // parse the current value
@@ -24,7 +24,7 @@ Template.pickerTemplate.events({
       $('.minuteValue').html( '00' );
     }
   },
-  'mousedown .decrementHour' : function(event, template) {
+  'click .decrementHour' : function(event, template) {
     event.preventDefault();
 
     // parse the current value
@@ -44,7 +44,7 @@ Template.pickerTemplate.events({
     * ######### MINUTE EVENTS ##########
     *
   */
-  'mousedown .incrementMinute' : function(event, template) {
+  'click .incrementMinute' : function(event, template) {
     event.preventDefault();
 
     // parse the current value
@@ -67,7 +67,7 @@ Template.pickerTemplate.events({
       $('.minuteValue').html( '00' );
     }
   },
-  'mousedown .decrementMinute' : function(event, template) {
+  'click .decrementMinute' : function(event, template) {
     event.preventDefault();
 
     // parse the current value

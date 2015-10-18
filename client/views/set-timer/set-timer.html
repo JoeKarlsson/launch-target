@@ -7,7 +7,7 @@
           <h1>Set Time</h1>
         </div>
         <p>
-          <ul class="button-group round toggle" data-toggle="buttons-radio">
+<!--           <ul class="button-group round toggle" data-toggle="buttons-radio">
             <li>
               <input type="radio" name="toggle-group" id="inTimeSwitch" class="button secondary" data-toggle="button">
               <label for="inTimeSwitch" class="button">
@@ -20,7 +20,7 @@
                 Set Launch At
               </label>
             </li>
-          </ul>
+          </ul> -->
 
 
           {{> pickerTemplate}}
@@ -54,45 +54,43 @@
     <div class="timePicker large-12 columns">
       <div class="row">
 
+        <!-- HOUR PICKER -->
         <div class="setHour small-6 columns">
           <div class="row">
             <div class="large-12 columns">
-              <div class="incrementHour">
-                <i class="fi-arrow-up icon-style"></i>
-              </div>
+                <i class="incrementHour fi-arrow-up icon-style"></i>
             </div>
             <div class="large-12 columns">
               <h1 class="hourValue"></h1>
             </div>
             <div class="large-12 columns">
-              <div class="decrementHour">
-                <i class="fi-arrow-down icon-style"></i>
-              </div>
+                <i class="decrementHour fi-arrow-down icon-style"></i>
             </div>
           </div>
         </div>
 
+        <!-- MINUTE PICKER -->
         <div class="setMinute small-6 columns">
           <div class="row">
             <div class="large-12 columns">
-              <div class="incrementMinute">
-                <i class="fi-arrow-up icon-style"></i>
-              </div>
+                <i class="incrementMinute fi-arrow-up icon-style"></i>
             </div>
             <div class="large-12 columns">
               <h1 class="minuteValue"></h1>
             </div>
             <div class="large-12 columns">
-              <div class="decrementMinute">
-                <i class="fi-arrow-down icon-style"></i>
-              </div>
+                <i class="decrementMinute fi-arrow-down icon-style"></i>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="row">
+        <!-- LAUNCH BUTTON -->
     <div class="large-12 columns">
-      <button class="setTimeLaunch">LAUNCH</button>
+      <button class="setTimeLaunch radius expand">LAUNCH</button>
     </div>
   </div>
 </template>
