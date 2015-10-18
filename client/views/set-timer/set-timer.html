@@ -22,12 +22,14 @@
             </li>
           </ul>
 
-          {{#if inTimeSwitchSelected}}
+
+          {{> pickerTemplate}}
+<!--           {{#if inTimeSwitchSelected}}
             {{> inTimeTemplate}}
           {{else}}
             {{> atTimeTemplate}}
           {{/if}}
-        </p>
+ -->        </p>
       </div>
     </div>
   </div>
@@ -44,4 +46,46 @@
   <input type="text" data-field="time" class="attime" readonly placeholder="have lunch at...">
   <div id="dtBox"></div>
   <button class="deploy">DEPLOY</button>
+</template>
+
+<template name="pickerTemplate">
+  <div class="row">
+
+    <div class="large-12 columns">
+      <div class="compValue">value</div>
+    </div>
+
+    <div class="timePicker large-12 columns">
+      <div class="row">
+
+        <div class="setHour small-6 columns">
+          <div class="row">
+            <div class="large-12 columns">
+              <a class="incrementHour">+</a>
+            </div>
+            <div class="large-12 columns">
+              <input type="text" class="hourValue" readonly>
+            </div>
+            <div class="large-12 columns">
+              <a class="decrementHour">-</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="setMinute small-6 columns">
+          <div class="row">
+            <div class="large-12 columns">
+              <a class="incrementMinute">+</a>
+            </div>
+            <div class="large-12 columns">
+              <input type="text" class="minuteValue" readonly>
+            </div>
+            <div class="large-12 columns">
+              <a class="decrementMinute">-</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

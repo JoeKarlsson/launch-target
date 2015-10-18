@@ -1,5 +1,5 @@
 //launchTimer persistent render
-Template.launchTimer.helpers({
+Template.flipclock.helpers({
   makeClock: function() {
     var launchTime = this.lunchtime - UI._globalHelpers.thisMoment();
     var clock = $('.clock').FlipClock(launchTime, {
@@ -9,7 +9,7 @@ Template.launchTimer.helpers({
 });
 
 //launchTimer initial render
-Template.launchTimer.rendered = function() {
+Template.flipclock.rendered = function() {
   var launchTime = this.data.lunchtime - UI._globalHelpers.thisMoment();
   var clock = $('.clock').FlipClock(launchTime, {
     countdown: true

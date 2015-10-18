@@ -25,6 +25,82 @@ Template.setTimeTemplate.events({
   }
 });
 
+Template.pickerTemplate.rendered = function() {
+  $('.hourValue').val('00');
+  $('.minuteValue').val('15');
+};
+
+Template.pickerTemplate.events({
+  /*
+    * ######## HOUR EVENTS #########
+    *
+  */
+  'click .incrementHour' : function(event, template) {
+    event.preventDefault();
+
+    // parse the current value
+    var value = parseInt($('.hourValue').val());
+
+    // cap on the amount of time
+    if (value < 4) {
+      value++;
+      $('.hourValue').val( '0'+ value.toString());
+    }
+  },
+  'click .decrementHour' : function(event, template) {
+    event.preventDefault();
+
+    // parse the current value
+    var value = parseInt($('.hourValue').val());
+
+    // cap on the least amount of time
+    if (value > 0) {
+      value--;
+      $('.hourValue').val( '0'+ value.toString());
+    }
+  },
+  /*
+    * ######### MINUTE EVENTS ##########
+    *
+  */
+  'click .incrementMinute' : function(event, template) {
+    event.preventDefault();
+
+    // parse the current value
+    var value = parseInt($('.minuteValue').val());
+
+    // cap on the amount of time
+    if (value < 60) {
+      value++;
+
+      // if its a single digit append 0
+      if (value < 10) {
+        $('.minuteValue').val( '0'+ value.toString() );
+      } else {
+        $('.minuteValue').val( value.toString() );
+      }
+    }
+  },
+  'click .decrementMinute' : function(event, template) {
+    event.preventDefault();
+
+    // parse the current value
+    var value = parseInt($('.minuteValue').val());
+
+    // cap on the amount of time
+    if (value > 15) {
+      value--;
+
+      // if its a single digit append 0
+      if (value < 10) {
+        $('.minuteValue').val( '0'+ value.toString() );
+      } else {
+        $('.minuteValue').val( value.toString() );
+      }
+    }
+  }
+});
+
 Template.inTimeTemplate.rendered = function() {
   $('#dtBox').DateTimePicker({
     minTime : '00:15',

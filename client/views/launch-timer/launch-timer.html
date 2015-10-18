@@ -1,4 +1,13 @@
 <template name="launchTimer">
-  <div class="clock"></div>
-  {{makeClock}}
+  {{> flipclock}}
+  {{> map}}
+</template>
+
+<template name="flipclock">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="clock"></div>
+      {{makeClock}}
+    </div>
+  </div>
 </template>
