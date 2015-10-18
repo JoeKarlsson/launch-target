@@ -9,12 +9,8 @@ var selectedLaunches = [];
 var launchID;
 
 Template.map.helpers({
-  myHelper : function() {
-    return Router.current().route.path(this);
-  },
   getLaunchID : function() {
     launchID = this._id;
-    //console.log('Get', launchID);
   }
 });
 
@@ -32,12 +28,10 @@ Template.map.events({
         alert(error.reason);
       } else {
         console.log('set launch time', selectedLaunches);
-        //Router.go('launch-timer', { _id : launchID });
       }
     });
 
-    //console.log('set launch time', selectedLaunches);
-    //Router.go('availableTargets');
+    //When saved - redirect to next screen
     Router.go('setTimeTemplate', { _id : launchID });
   }
 });
@@ -57,14 +51,15 @@ function validateSelects ($button, verifiedSource) {
 
 //Pull latitude and longitude from google maps api and return location zoom
 Template.map.helpers({
+  //If there is an error finding the current users geoloaction - spit out error to the DOM
   geolocationError : function() {
     var error = Geolocation.error();
     return error && error.message;
   },
+  //Set out map options
   mapOptions : function() {
     var latLng = Geolocation.latLng();
 
-    // console.log(latLng);
     //Initialize the map once we  have the latLng.
     if (GoogleMaps.loaded() && latLng) {
       return {
@@ -74,7 +69,6 @@ Template.map.helpers({
     }
   },
   allTargets : function () {
-    // return Launches.findOne(this._id).targets;
     return Session.get('allTargets');
   }
 });
@@ -86,12 +80,12 @@ Template.targetListItem.events({
     setTimeButton = setTimeButton || $('#gotoSetTime');
 
     var scb = template.$('.styled-checkbox');
+    //If the box is unchecked, add the restaurant to our array
     if (this.include) {
       selectCount++;
       scb.addClass('checked');
       selectedLaunches.push(this);
-      //console.log('click add', selectedLaunches);
-    } else {
+    } else { //If it has already been selected - remove it from the array
       selectCount--;
       scb.removeClass('checked');
 
@@ -101,7 +95,6 @@ Template.targetListItem.events({
       //Then remove it with splice
       if (index > -1) {
         selectedLaunches.splice(index, 1);
-        //console.log('click remove', selectedLaunches);
       }
 
     }
@@ -114,7 +107,6 @@ Template.map.onCreated(function() {
   var self = this;
 
   GoogleMaps.ready('map', function(map) {
-    // console.log(map);
     //get lat and long from current location
     var latLng = Geolocation.latLng();
 
@@ -131,8 +123,6 @@ Template.map.onCreated(function() {
     });
 
     //get surrounding restaurants within radius
-    // console.log(google.maps.places.PlacesService(map.instance));
-
     //call on the document of food which is an array of objects
     var service = new google.maps.places.PlacesService(map.instance);
     service.nearbySearch({
@@ -157,7 +147,7 @@ Template.map.onCreated(function() {
       }
     }
 
-    //create marker for restaurant locations within radius
+    //create marker for all restaurant locations within radius
     function createMarker(place) {
       var placeLoc = place.geometry.location;
       var marker = new google.maps.Marker({
