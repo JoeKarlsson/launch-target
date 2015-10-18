@@ -1,9 +1,6 @@
 #Launch Target
 
-##Helping your crew to find the right lunch target.
-
-## Installation
-A real time interactive lunch time coordination app built using Meteor.
+##A real time interactive lunch time coordination app built using Meteor.
 
 ## Usage
 1. Intall node.js https://nodejs.org/en/
