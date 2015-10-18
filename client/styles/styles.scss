@@ -45,6 +45,8 @@ body {
   }
 }
 
+//=======================TIMER STYLES===================
+
 .button-group {
   margin-bottom: 1rem;
   button + button {
@@ -75,6 +77,25 @@ input[data-toggle]:checked + label:active {
     &:hover {
       background-color: #C7E1B6;
     }
+  }
+}
+
+.icon-style  {
+  color: #B4243B;
+  font-size: 2.2rem;
+  padding:.01em .22em;
+  &:active {
+    background-color: #fff;
+    box-shadow: 0 0 0 5px #fff;
+    transform: scale(1.5);
+    transition: all .4s ease-in-out;
+  }
+}
+
+.setTimeLaunch {
+  background-color: #333;
+  &:hover {
+    background-color: #B4243B;
   }
 }
 

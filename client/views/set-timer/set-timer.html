@@ -51,23 +51,23 @@
 <template name="pickerTemplate">
   <div class="row">
 
-    <div class="large-12 columns">
-      <div class="compValue">value</div>
-    </div>
-
     <div class="timePicker large-12 columns">
       <div class="row">
 
         <div class="setHour small-6 columns">
           <div class="row">
             <div class="large-12 columns">
-              <a class="incrementHour">+</a>
+              <div class="incrementHour">
+                <i class="fi-arrow-up icon-style"></i>
+              </div>
             </div>
             <div class="large-12 columns">
-              <input type="text" class="hourValue" readonly>
+              <h1 class="hourValue"></h1>
             </div>
             <div class="large-12 columns">
-              <a class="decrementHour">-</a>
+              <div class="decrementHour">
+                <i class="fi-arrow-down icon-style"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -75,17 +75,24 @@
         <div class="setMinute small-6 columns">
           <div class="row">
             <div class="large-12 columns">
-              <a class="incrementMinute">+</a>
+              <div class="incrementMinute">
+                <i class="fi-arrow-up icon-style"></i>
+              </div>
             </div>
             <div class="large-12 columns">
-              <input type="text" class="minuteValue" readonly>
+              <h1 class="minuteValue"></h1>
             </div>
             <div class="large-12 columns">
-              <a class="decrementMinute">-</a>
+              <div class="decrementMinute">
+                <i class="fi-arrow-down icon-style"></i>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="large-12 columns">
+      <button class="setTimeLaunch">LAUNCH</button>
     </div>
   </div>
 </template>
