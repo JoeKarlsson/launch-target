@@ -10,7 +10,7 @@ Template.flipclock.helpers({
 
 //launchTimer initial render
 Template.flipclock.rendered = function() {
-  var launchTime = this.data.lunchtime - UI._globalHelpers.thisMoment();
+  var launchTime = this.data.launchtime - UI._globalHelpers.thisMoment();
   var clock = $('.clock').FlipClock(launchTime, {
     countdown: true
   });
