@@ -43,7 +43,7 @@ Template.inTimeTemplate.events({
     var inputIn = ((Number(hrs) * 60) + Number(mins)) * 60
     Launches.update({_id : this._id}
       , { $set : { lunchtime : (inputIn + now)} });
-    Router.go('launchTimer', { _id : this._id });
+    Router.go('finalLaunchPlan', { _id : this._id });
   }
 })
 

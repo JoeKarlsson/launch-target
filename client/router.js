@@ -16,7 +16,7 @@ Router.route('/plan/:_id/select', {
 });
 
 Router.route('/plan/:_id/targets', {
-  name: 'map',
+  name: 'selectTargets',
   data: function () {
     return Launches.findOne(this.params._id);
   }
@@ -30,7 +30,7 @@ Router.route('/plan/:_id/setTime', {
 });
 
 Router.route('/launch/:_id', {
- name: 'launchTimer',
+ name: 'finalLaunchPlan',
  data: function() {
   return Launches.findOne(this.params._id);
  }
