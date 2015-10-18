@@ -5,10 +5,46 @@ var results;
 var selectCount = 0;
 var setTimeButton = null;
 
+var selectedLaunches = [];
+var launchID;
+
+Template.map.helpers({
+  myHelper : function() {
+    return Router.current().route.path(this);
+  },
+  getLaunchID : function() {
+    launchID = this._id;
+    //console.log('Get', launchID);
+  }
+});
+
+//Save array when Set Launch Time button clicked
+Template.map.events({
+  'click #gotoSetTime' : function (event) {
+    event.preventDefault();
+
+    //console.log(this);
+    launchID = this._id;
+    Launches.update(launchID, { $set : { proposedLaunches : selectedLaunches } }, function(error) {
+
+      if (error) {
+        // display the error to the user
+        alert(error.reason);
+      } else {
+        console.log('set launch time', selectedLaunches);
+        //Router.go('launch-timer', { _id : launchID });
+      }
+    });
+
+    //console.log('set launch time', selectedLaunches);
+    //Router.go('availableTargets');
+    Router.go('setTimeTemplate', { _id : launchID });
+  }
+});
+
 //When app starts load google maps
 Meteor.startup(function() {
-  GoogleMaps.load({ v: '3', key: 'AIzaSyAG_bYopvQf3H2lrQBNfKJyo4fic2ETdFI', libraries: 'geometry,places'});
-  // console.log('mapLoaded');
+  GoogleMaps.load({ v : '3', key : 'AIzaSyAG_bYopvQf3H2lrQBNfKJyo4fic2ETdFI', libraries : 'geometry,places' });
 });
 
 function validateSelects ($button, verifiedSource) {
@@ -21,29 +57,31 @@ function validateSelects ($button, verifiedSource) {
 
 //Pull latitude and longitude from google maps api and return location zoom
 Template.map.helpers({
-  geolocationError: function() {
+  geolocationError : function() {
     var error = Geolocation.error();
     return error && error.message;
   },
-  mapOptions: function() {
+  mapOptions : function() {
     var latLng = Geolocation.latLng();
+
     // console.log(latLng);
     //Initialize the map once we  have the latLng.
     if (GoogleMaps.loaded() && latLng) {
       return {
-        center: new google.maps.LatLng(latLng.lat, latLng.lng),
-        zoom: MAP_ZOOM
+        center : new google.maps.LatLng(latLng.lat, latLng.lng),
+        zoom : MAP_ZOOM
       };
     }
   },
-  allTargets: function () {
+  allTargets : function () {
     // return Launches.findOne(this._id).targets;
     return Session.get('allTargets');
   }
 });
 
+//Selecting Launch Target on the list
 Template.targetListItem.events({
-  'click .alert-box': function (event, template) {
+  'click .alert-box' : function (event, template) {
     this.include = !this.include;
     setTimeButton = setTimeButton || $('#gotoSetTime');
 
@@ -51,9 +89,21 @@ Template.targetListItem.events({
     if (this.include) {
       selectCount++;
       scb.addClass('checked');
+      selectedLaunches.push(this);
+      //console.log('click add', selectedLaunches);
     } else {
       selectCount--;
       scb.removeClass('checked');
+
+      //find the index of the object we want to remove
+      var index = selectedLaunches.indexOf(this);
+
+      //Then remove it with splice
+      if (index > -1) {
+        selectedLaunches.splice(index, 1);
+        //console.log('click remove', selectedLaunches);
+      }
+
     }
     validateSelects(setTimeButton, selectCount);
   }
@@ -76,8 +126,8 @@ Template.map.onCreated(function() {
 
     //drop marker on current location
     var marker = new google.maps.Marker({
-      position: currentPost,
-      map: map.instance
+      position : currentPost,
+      map : map.instance
     });
 
     //get surrounding restaurants within radius
@@ -86,9 +136,9 @@ Template.map.onCreated(function() {
     //call on the document of food which is an array of objects
     var service = new google.maps.places.PlacesService(map.instance);
     service.nearbySearch({
-      location: currentPost,
-      radius: 500,
-      types: ['food']
+      location : currentPost,
+      radius : 500,
+      types : ['food']
     }, callback);
 
     //Error checking to check for status of query
@@ -97,9 +147,9 @@ Template.map.onCreated(function() {
         var targets = results.map(function (target) {
           createMarker(target);
           var targetDetail = {
-            name: target.name,
-            placeId: target.place_id,
-            include: false
+            name : target.name,
+            placeId : target.place_id,
+            include : false
           };
           return targetDetail;
         });
@@ -111,9 +161,9 @@ Template.map.onCreated(function() {
     function createMarker(place) {
       var placeLoc = place.geometry.location;
       var marker = new google.maps.Marker({
-        map: map.instance,
-        position: place.geometry.location,
-        draggable: false
+        map : map.instance,
+        position : place.geometry.location,
+        draggable : false
       });
 
       //event listener that loads resturant information into infowindow.

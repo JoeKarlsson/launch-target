@@ -6,6 +6,9 @@
           <h1>Select Target Options</h1>
         </div>
         <div class="map-container">
+
+          {{getLaunchID}}
+
           {{#unless geolocationError}}
             {{> googleMap name='map' options=mapOptions}}
           {{else}}
