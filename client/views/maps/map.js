@@ -68,13 +68,16 @@ Template.map.onCreated(function() {
         console.log('targets', targets);
 
         var targets = results.map(function (target) {
-          console.log('target',target);
+          console.log('target', target);
           createMarker(target);
           var targetDetail = {
             name : target.name,
             placeId : target.place_id,
             include : false,
             location : target.geometry.location,
+            icon : target.icon,
+            vicinity : target.vicinity,
+            rating : target.rating,
             votes : 0
           };
           return targetDetail;

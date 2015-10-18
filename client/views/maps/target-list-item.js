@@ -22,9 +22,9 @@ Template.targetListItem.events({
       selectCount++;
       scb.addClass('checked');
       this.votes = 0;
-      selectedLaunches.push(this);
-      Session.set('selectedLaunches', selectedLaunches)
       //selectedLaunches.push(this);
+      Session.set('selectedLaunches', selectedLaunches)
+      selectedLaunches.push(this);
       console.log(selectedLaunches);
     } else { //If it has already been selected - remove it from the array
       selectCount--;
