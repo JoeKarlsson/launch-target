@@ -105,6 +105,13 @@ input[data-toggle]:checked + label:active {
   }
 }
 
+#timeLabel {
+  color: #999;
+}
+
+.timeValues {
+  font-size: 5rem;
+}
 //==================Maps Styles=================
 .map-container {
   width: 800px;

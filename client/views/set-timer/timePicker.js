@@ -110,8 +110,9 @@ Template.pickerTemplate.events({
     var hrs = $('.hourValue').html();
     var mins = $('.minuteValue').html();
     var inputIn = ((Number(hrs) * 60) + Number(mins)) * 60
+    var launchtime = inputIn + now;
     Launches.update({_id : this._id}
-      , { $set : { lunchtime : (inputIn + now)} });
+      , { $set : { lunchtime : launchtime } });
     Router.go('finalLaunchPlan', { _id : this._id });
   }
 });
