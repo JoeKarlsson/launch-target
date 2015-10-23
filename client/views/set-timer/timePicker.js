@@ -52,7 +52,7 @@ Template.pickerTemplate.events({
     var hourValue = parseInt($('.hourValue').html());
 
     // cap on the amount of time
-    if (value < 59 && hourValue < 3) {
+    if (value < 59 && hourValue !== 4) {
       value++;
 
       // if its a single digit append 0
@@ -61,7 +61,7 @@ Template.pickerTemplate.events({
       } else {
         $('.minuteValue').html( value.toString() );
       }
-    } else if (hourValue == 3){
+    } else if (hourValue <= 3){
       hourValue++;
       $('.hourValue').html( hourValue.toString() );
       $('.minuteValue').html( '00' );
