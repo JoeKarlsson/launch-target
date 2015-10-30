@@ -3,6 +3,28 @@ Template.pickerTemplate.rendered = function() {
   $('.minuteValue').html('15');
 };
 
+Template.pickerTemplate.onRendered(function () {
+  setInterval(function() {
+
+    var pickedHourValue = parseInt($('.hourValue').html());
+    var pickedMinuteValue = parseInt($('.minuteValue').html());
+    var currentHourValue = moment().hours() + pickedHourValue;
+    var currentMinuteValue = moment().minutes() + pickedMinuteValue;
+
+    if (currentMinuteValue >= 60) {
+      currentHourValue++;
+      currentMinuteValue -= 60;
+    }
+
+    if (currentHourValue >= 24) {
+      currentHourValue = 0;
+    }
+
+    this.$('.currentHourValue').html((currentHourValue).toString());
+    this.$('.currentMinuteValue').html((currentMinuteValue).toString());
+  }, 500);
+});
+
 Template.pickerTemplate.events({
   /*
     * ######## HOUR EVENTS #########
