@@ -32,6 +32,9 @@ Template.pickerTemplate.onRendered(function () {
     if (currentHourValue > 12) {
       convertedHourValue = currentHourValue - 12;
       amPm = 'PM';
+    } else if (currentHourValue == 12) {
+      convertedHourValue = currentHourValue;
+      amPm = 'PM';
     } else {
       convertedHourValue = currentHourValue;
       amPm = 'AM';
