@@ -10,19 +10,36 @@ Template.pickerTemplate.onRendered(function () {
     var pickedMinuteValue = parseInt($('.minuteValue').html());
     var currentHourValue = moment().hours() + pickedHourValue;
     var currentMinuteValue = moment().minutes() + pickedMinuteValue;
+    var convertedHourValue;
+    var convertedMinuteValue;
+    var amPm;
+    var timeString;
 
     if (currentMinuteValue >= 60) {
       currentHourValue++;
       currentMinuteValue -= 60;
+    }
+    if (currentMinuteValue <= 9) {
+      convertedMinuteValue = '0' + currentMinuteValue.toString();
+    } else {
+      convertedMinuteValue = currentMinuteValue.toString();
     }
 
     if (currentHourValue >= 24) {
       currentHourValue = 0;
     }
 
-    this.$('.currentHourValue').html((currentHourValue).toString());
-    this.$('.currentMinuteValue').html((currentMinuteValue).toString());
-  }, 500);
+    if (currentHourValue > 12) {
+      convertedHourValue = currentHourValue - 12;
+      amPm = 'PM';
+    } else {
+      convertedHourValue = currentHourValue;
+      amPm = 'AM';
+    }
+
+    this.$('.timeString').html(convertedHourValue + ':' + convertedMinuteValue + ' ' + amPm);
+
+  }, 100);
 });
 
 Template.pickerTemplate.events({
