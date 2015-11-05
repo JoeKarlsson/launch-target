@@ -74,7 +74,7 @@ Template.atTimeTemplate.events({
     if(inputIn < 900 || inputIn > 14400) {
       alert('please plan between 15 minutes and 4 hours');
     } else {
-      Router.go('launchTimer', { _id : this._id });
+      Router.go('finalLaunchPlan', { _id : this._id });
    }
   }
 })

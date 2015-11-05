@@ -3,6 +3,48 @@ Template.pickerTemplate.rendered = function() {
   $('.minuteValue').html('15');
 };
 
+Template.pickerTemplate.onRendered(function () {
+  setInterval(function() {
+
+    var pickedHourValue = parseInt($('.hourValue').html());
+    var pickedMinuteValue = parseInt($('.minuteValue').html());
+    var currentHourValue = moment().hours() + pickedHourValue;
+    var currentMinuteValue = moment().minutes() + pickedMinuteValue;
+    var convertedHourValue;
+    var convertedMinuteValue;
+    var amPm;
+    var timeString;
+
+    if (currentMinuteValue >= 60) {
+      currentHourValue++;
+      currentMinuteValue -= 60;
+    }
+    if (currentMinuteValue <= 9) {
+      convertedMinuteValue = '0' + currentMinuteValue.toString();
+    } else {
+      convertedMinuteValue = currentMinuteValue.toString();
+    }
+
+    if (currentHourValue >= 24) {
+      currentHourValue = 0;
+    }
+
+    if (currentHourValue > 12) {
+      convertedHourValue = currentHourValue - 12;
+      amPm = 'PM';
+    } else if (currentHourValue == 12) {
+      convertedHourValue = currentHourValue;
+      amPm = 'PM';
+    } else {
+      convertedHourValue = currentHourValue;
+      amPm = 'AM';
+    }
+
+    this.$('.timeString').html(convertedHourValue + ':' + convertedMinuteValue + ' ' + amPm);
+
+  }, 100);
+});
+
 Template.pickerTemplate.events({
   /*
     * ######## HOUR EVENTS #########
@@ -52,7 +94,7 @@ Template.pickerTemplate.events({
     var hourValue = parseInt($('.hourValue').html());
 
     // cap on the amount of time
-    if (value < 59 && hourValue < 3) {
+    if (value < 59 && hourValue !== 4) {
       value++;
 
       // if its a single digit append 0
@@ -61,7 +103,7 @@ Template.pickerTemplate.events({
       } else {
         $('.minuteValue').html( value.toString() );
       }
-    } else if (hourValue == 3){
+    } else if (hourValue <= 3){
       hourValue++;
       $('.hourValue').html( hourValue.toString() );
       $('.minuteValue').html( '00' );
@@ -110,8 +152,9 @@ Template.pickerTemplate.events({
     var hrs = $('.hourValue').html();
     var mins = $('.minuteValue').html();
     var inputIn = ((Number(hrs) * 60) + Number(mins)) * 60
+    var launchtime = inputIn + now;
     Launches.update({_id : this._id}
-      , { $set : { lunchtime : (inputIn + now)} });
+      , { $set : { lunchtime : launchtime } });
     Router.go('finalLaunchPlan', { _id : this._id });
   }
 });
