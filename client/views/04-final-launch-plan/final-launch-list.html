@@ -1,0 +1,19 @@
+<template name='finalLaunchList'>
+
+    <div class="row">
+        <br>
+        <div class="col s12 left-align">
+            <h5 class="flow-text white-text">Vote on where you want to go tonight</h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-9 columns small-centered">
+          {{ #each allFinalTargets }}
+            {{> finalTargetListItem}}
+          {{/each}}
+        </div>
+    </div>
+    <br>
+
+</template>

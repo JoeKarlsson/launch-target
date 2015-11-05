@@ -1,0 +1,31 @@
+<template name="copy">
+
+  <div class="targets-list">
+    <div class="row">
+
+      <div class="small-12 medium-6  small-left columns">
+          <p>Want more friends to vote on where you are going for launch?</p>
+      </div>
+
+      <div class="small-6 columns">
+        <div class="row collapse">
+
+          <div class="small-10 columns">
+            <input name="clipboard-text" value='{{getURL}}' id="clipboard-text" type="text" class="validate">
+          </div>
+
+          <div class="small-2 columns">
+            <button class="button postfix" id="target-to-copy" data-clipboard-target="clipboard-text" type="submit" name="action">
+              Copy URL
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</template>
+
+

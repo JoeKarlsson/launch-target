@@ -1,0 +1,37 @@
+<template name='finalLaunchPlan'>
+
+   <div class="row">
+    <div class="small-12 medium-12 large-12 small-centered columns">
+      <div class="header panel">
+        <div class="sign">
+          <h1>Vote For Final Launch Target</h1>
+        </div>
+
+        {{getAllFinalTargets}}
+        <div class="map-container small-12 medium-10 large-10 small-centered columns">
+          {{getLaunchID}}
+
+          {{#unless geolocationError}}
+            {{> googleMap name='map' options=mapOptions}}
+          {{else}}
+            Geolocation failed: {{geolocationError}}
+          {{/unless}}
+        </div>
+
+        <div class="small-12 medium-10 large-10 small-centered columns">
+          {{> flipclock }}
+        </div>
+
+        <div class="small-12 medium-10 large-10 small-centered columns">
+          {{> copy }}
+        </div>
+
+        <div class="small-12 medium-10 large-10 small-centered columns">
+          {{> finalLaunchList }}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</template>

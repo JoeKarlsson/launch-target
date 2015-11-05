@@ -1,0 +1,24 @@
+<template name="finalTargetListItem">
+  {{getPlanId}}
+    <div class="collection-item">
+      <article class="event">
+        <div class="event-date">
+          <p class="event-month">Votes</p>
+          <p class="event-day">{{ votes }}</p>
+        </div>
+
+        <div class="event-desc">
+          <h4 class="event-desc-header">{{name}}</h4>
+          <p class="event-desc-detail"><span class="event-desc-time"></span>
+            Rating: {{ rating }}
+          </p>
+          <a class="rsvp button ride_btn" type="submit" name="action">
+            Need a Ride?
+          </a>
+        </div>
+      </article>
+    </div>
+
+  <hr>
+
+</template>

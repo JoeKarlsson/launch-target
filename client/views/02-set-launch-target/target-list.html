@@ -1,0 +1,33 @@
+<template name='targetList'>
+
+            <div class="row">
+                <br>
+                <div class="small-6 small-left columns">
+                    <h5>
+                        Select the bars you want your friends to vote on from the list below
+                    </h5>
+                </div>
+
+                <div class="small-6 small-right columns">
+                    <a id="setTimerBtn" class="button right">Set Launch Timer</a>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <ul>
+                  {{#each allTargets}}
+                    {{> targetListItem}}
+                  {{/each}}
+                </ul>
+            </div>
+
+            <div class="row">
+            <div class="small-6 small-left columns"></div>
+                <div class="small-6 small-right columns">
+                    <a id="setTimerBtn" class="button right">Set Launch Timer</a>
+                </div>
+            </div>
+            <br>
+
+</template>

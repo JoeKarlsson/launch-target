@@ -33,6 +33,4 @@ This will install the meteor executable onto your system and have you ready to u
 ## License
 
 ##TODO ITEMS
-- Get 'Select Location' feature working
-- Fix all routes
-- Finish styling
+
