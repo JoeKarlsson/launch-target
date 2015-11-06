@@ -1,5 +1,5 @@
 //Global variable for setting default zoom in google maps
-var MAP_ZOOM = 14;
+var MAP_ZOOM = 16;
 var results;
 
 //When app starts load google maps
@@ -83,8 +83,8 @@ Template.map.onCreated(function() {
     var service = new google.maps.places.PlacesService(map.instance);
     service.nearbySearch({
       location : currentPost,
-      radius : 2600,
-      types : ['bar']
+      radius : 1500,
+      types : ['bakery', 'food', 'restaurant']
     }, callback);
 
     //Error checking to check for status of query

@@ -1,5 +1,5 @@
 var finalTargets;
-var MAP_ZOOM = 15;
+var MAP_ZOOM = 16;
 var results;
 
 Template.finalLaunchPlan.helpers({
