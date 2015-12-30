@@ -1,6 +1,6 @@
 #Launch Target
 
-##A real time interactive lunch time coordination app built using Meteor.
+##A real time interactive 'launch time' coordination app built using Meteor.
 
 ## Usage
 1. Intall node.js https://nodejs.org/en/
@@ -28,7 +28,7 @@ This will install the meteor executable onto your system and have you ready to u
 - Jessie Copeland
 - Alex Anich
 - Brian 'Boots'
-- Nolan 'skinny fatman'
+- Nolan 'Skinny Fatman'
 
 ##Built With
 - Meteor

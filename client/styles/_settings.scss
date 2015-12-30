@@ -145,8 +145,8 @@ $modules: () !default;
 // $font-weight-bold: bold !default
 
 // We use these to control various global styles
-// $body-bg: #fff;
-// $body-font-color: #222;
+// $body-bg: none;
+ $body-font-color: #D9BB5C;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
@@ -160,8 +160,8 @@ $modules: () !default;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #053A93;
-// $secondary-color: #e7e7e7;
+$primary-color: #469591;
+$secondary-color: #133B48;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
@@ -227,7 +227,7 @@ $primary-color: #053A93;
 // $header-font-family: $body-font-family;
 // $header-font-weight: $font-weight-normal;
 // $header-font-style: normal;
-// $header-font-color: #222;
+ $header-font-color: #D9BB5C;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -427,7 +427,7 @@ $primary-color: #053A93;
 // We use these to set various text styles for breadcrumbs.
 // $crumb-font-size: rem-calc(11);
 // $crumb-font-color: $primary-color;
-// $crumb-font-color-current: #333;
+// $crumb-font-color-current: #D9BB5C;
 // $crumb-font-color-unavailable: #999;
 // $crumb-font-transform: uppercase;
 // $crumb-link-decor: underline;
@@ -455,7 +455,7 @@ $primary-color: #053A93;
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
 // $button-font-color: #fff;
-// $button-font-color-alt: #333;
+// $button-font-color-alt: #D9BB5C;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
 // $button-font-med: rem-calc(16);
@@ -492,7 +492,7 @@ $primary-color: #053A93;
 // $include-html-clearing-classes: $include-html-classes;
 
 // We use these to set the background colors for parts of Clearing.
-// $clearing-bg: #333;
+// $clearing-bg: #D9BB5C;
 // $clearing-caption-bg: $clearing-bg;
 // $clearing-carousel-bg: rgba(51,51,51,0.8);
 // $clearing-img-bg: $clearing-bg;
@@ -568,7 +568,7 @@ $primary-color: #053A93;
 
 // We use these to set the color of the pip in dropdown buttons
 // $dropdown-button-pip-color: #fff;
-// $dropdown-button-pip-color-alt: #333;
+// $dropdown-button-pip-color-alt: #D9BB5C;
 
 // $button-pip-tny: rem-calc(6);
 // $button-pip-sml: rem-calc(7);
@@ -658,7 +658,7 @@ $primary-color: #053A93;
 // $input-prefix-border-size: 1px;
 // $input-prefix-border-type: solid;
 // $input-prefix-overflow: hidden;
-// $input-prefix-font-color: #333;
+// $input-prefix-font-color: #D9BB5C;
 // $input-prefix-font-color-alt: #fff;
 
 // We use these to style the error states for inputs and labels

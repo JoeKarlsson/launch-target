@@ -88,7 +88,7 @@ Template.finalLaunchPlan.onCreated(function() {
         lng : place.location.K
       };
 
-      //console.log('placeLoc', placeLoc);
+      console.log('placeLoc', placeLoc);
       var marker = new google.maps.Marker({
         map : map.instance,
         position : placeLoc,
