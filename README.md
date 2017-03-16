@@ -1,6 +1,6 @@
-#Launch Target
+# Launch Target
 
-##A real time interactive 'launch time' coordination app built using Meteor.
+## A real time interactive 'launch time' coordination app built using Meteor.
 
 ## Usage
 1. Intall node.js https://nodejs.org/en/
