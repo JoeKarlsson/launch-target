@@ -30,7 +30,7 @@ This will install the meteor executable onto your system and have you ready to u
 - Brian 'Boots'
 - Nolan 'Skinny Fatman'
 
-##Built With
+## Built With
 - Meteor
 - HTML
 - SCSS
@@ -38,7 +38,7 @@ This will install the meteor executable onto your system and have you ready to u
 - MonogoDB
 - Google Maps API
 
-##Packages Used
+## Packages Used
 - momentjs:moment
 - matthew:foundation5-sass
 - iron:router
@@ -51,7 +51,7 @@ This will install the meteor executable onto your system and have you ready to u
 - propercursive:zeroclipboard
 - fortawesome:fontawesome
 
-##Todo
+## Todo
 -Make night out ID searchable
 
 ## License
