@@ -24,7 +24,7 @@ This will install the meteor executable onto your system and have you ready to u
 5. Submit a pull request :D
 
 ## Credits
-- Joe Carlson
+- Joe Karlsson
 - Jessie Copeland
 - Alex Anich
 - Brian 'Boots'
@@ -57,7 +57,7 @@ This will install the meteor executable onto your system and have you ready to u
 ## License
 The MIT License
 
-Copyright (c) 2015 Glipcode http://glipcode.com
+Copyright (c) 2017 Joe Karlsson
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
