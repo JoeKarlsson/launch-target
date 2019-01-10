@@ -28,13 +28,6 @@ This will install the meteor executable onto your system and have you ready to u
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-## Credits
-- Joe Karlsson
-- Jessie Copeland
-- Alex Anich
-- Brian 'Boots'
-- Nolan 'Skinny Fatman'
-
 ## Built With
 - Meteor
 - HTML
@@ -59,4 +52,23 @@ This will install the meteor executable onto your system and have you ready to u
 ## Todo
 -Make night out ID searchable
 
+### Maintainers
 
+<table>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img width="150 height="150"
+        src="https://avatars.githubusercontent.com/JoeKarlsson?v=3">
+        <br />
+        <a href="https://github.com/JoeKarlsson">Joe Karlsson</a>
+    <tr>
+  <tbody>
+</table>
+
+## Credits
+- Joe Karlsson
+- Jessie Copeland
+- Alex Anich
+- Brian 'Boots'
+- Nolan 'Skinny Fatman'
