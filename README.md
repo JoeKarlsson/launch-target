@@ -1,5 +1,5 @@
 <p align="center">
-	<img width=100% src="https://github.com/JoeKarlsson/launch-target/files/2747007/Launch.Target.pdf" />
+	<img width=100% src="https://user-images.githubusercontent.com/4650739/50997122-62db8580-14e9-11e9-9480-eec52cc3b6de.png" />
 </p>
 
 <h1 align="center">Launch Target</h1>
@@ -8,7 +8,7 @@
 
 ## Usage
 1. Intall node.js https://nodejs.org/en/
-1. To begin with, we can install Meteor by opening a terminal window and typing:
+2. To begin with, we can install Meteor by opening a terminal window and typing:
 
 curl https://install.meteor.com | sh
 
