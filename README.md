@@ -36,22 +36,6 @@ This will install the meteor executable onto your system and have you ready to u
 - MonogoDB
 - Google Maps API
 
-## Packages Used
-- momentjs:moment
-- matthew:foundation5-sass
-- iron:router
-- mrt:meteor-flipclockjs
-- yn5:curious-datetimepicker
-- dburles:google-maps
-- mdg:geolocation
-- maibaum:foundation-icons
-- sacha:spin
-- propercursive:zeroclipboard
-- fortawesome:fontawesome
-
-## Todo
--Make night out ID searchable
-
 ### Maintainers
 
 <table>
