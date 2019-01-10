@@ -10,4 +10,6 @@ UI.registerHelper('shareOnGooglePlusLink', function() {
 UI.registerHelper('openGitHubCode', function() {
   return 'https://github.com/mentalgrinds/launch-target';
 });
-
+UI.registerHelper('currentYear', function () {
+  return new Date().getFullYear();
+});
