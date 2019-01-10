@@ -9,15 +9,17 @@
 ## Usage
 1. Intall node.js https://nodejs.org/en/
 2. To begin with, we can install Meteor by opening a terminal window and typing:
-
+   
+```bash
 curl https://install.meteor.com | sh
+```
 
 This will install the meteor executable onto your system and have you ready to use Meteor.
 
 1. cd launch-target
-1. run 'meteor'
-1. open your browser window to 'http://localhost:3000/'
-1. set a launch target for your friends, family, or co-workers!
+2. run 'meteor'
+3. open your browser window to 'http://localhost:3000/'
+4. set a launch target for your friends, family, or co-workers!
 
 ## Contributing
 1. Fork it!
