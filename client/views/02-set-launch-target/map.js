@@ -4,7 +4,8 @@ var results;
 
 //When app starts load google maps
 Meteor.startup(function() {
-  GoogleMaps.load({ v : '3', key : 'AIzaSyAG_bYopvQf3H2lrQBNfKJyo4fic2ETdFI', libraries : 'geometry,places' });
+  GoogleMaps.load({
+    v: '3', key: 'AIzaSyAkC8ScbtYsglQVi0beeRVlhImDtyccWq8', libraries : 'geometry,places' });
 });
 
 //Pull latitude and longitude from google maps api and return location zoom

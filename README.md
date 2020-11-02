@@ -2,19 +2,30 @@
 
 ## A real time interactive 'launch time' coordination app built using Meteor.
 
+<p align="center">
+	<img width=100% src="https://user-images.githubusercontent.com/4650739/50997122-62db8580-14e9-11e9-9480-eec52cc3b6de.png" />
+</p>
+
+<h1 align="center">Launch Target</h1>
+
+> A real time interactive 'launch time' coordination app built using Meteor.
+
+Have you and your coworkers or friends ever had a hard time deciding on where to go for lunch? Launch target allows a host to pick a handful of nearby restaurants, and you can have your friends vote on their favorites in real time!
+
 ## Usage
 1. Intall node.js https://nodejs.org/en/
-2. run npm Install
-3. To begin with, we can install Meteor by opening a terminal window and typing:
-
+2. To begin with, we can install Meteor by opening a terminal window and typing:
+   
+```bash
 curl https://install.meteor.com | sh
+```
 
 This will install the meteor executable onto your system and have you ready to use Meteor.
 
-3. cd launch-target
-4. run 'meteor'
-4. open your browser window to 'http://localhost:3000/'
-5. set a launch target for your friends, family, or co-workers!
+1. cd launch-target
+2. run 'meteor'
+3. open your browser window to 'http://localhost:3000/'
+4. set a launch target for your friends, family, or co-workers!
 
 ## Contributing
 1. Fork it!
@@ -38,31 +49,23 @@ This will install the meteor executable onto your system and have you ready to u
 - MonogoDB
 - Google Maps API
 
-## Packages Used
-- momentjs:moment
-- matthew:foundation5-sass
-- iron:router
-- mrt:meteor-flipclockjs
-- yn5:curious-datetimepicker
-- dburles:google-maps
-- mdg:geolocation
-- maibaum:foundation-icons
-- sacha:spin
-- propercursive:zeroclipboard
-- fortawesome:fontawesome
+### Maintainers
 
-## Todo
--Make night out ID searchable
+<table>
+  <tbody>
+    <tr>
+      <td align="center">
+        <img width="150 height="150"
+        src="https://avatars.githubusercontent.com/JoeKarlsson?v=3">
+        <br />
+        <a href="https://github.com/JoeKarlsson">Joe Karlsson</a>
+    <tr>
+  <tbody>
+</table>
 
-## License
-The MIT License
-
-Copyright (c) 2017 Joe Karlsson
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
+## Credits
+- Joe Karlsson
+- Jessie Copeland
+- Alex Anich
+- Brian 'Boots'
+- Nolan 'Skinny Fatman'

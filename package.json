@@ -1,0 +1,26 @@
+{
+  "name": "launch-target",
+  "version": "1.0.0",
+  "description": "<p align=\"center\"> \t<img width=100% src=\"https://user-images.githubusercontent.com/4650739/50997122-62db8580-14e9-11e9-9480-eec52cc3b6de.png\" /> </p>",
+  "main": "index.js",
+  "scripts": {
+    "start": "meteor",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoeKarlsson/launch-target.git"
+  },
+  "keywords": [],
+  "author": "Joe <joekarlsson1@gmail.com>",
+  "license": "ISC",
+  "gypfile": true,
+  "bugs": {
+    "url": "https://github.com/JoeKarlsson/launch-target/issues"
+  },
+  "homepage": "https://github.com/JoeKarlsson/launch-target#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.12.1"
+  }
+}
