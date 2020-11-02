@@ -19,13 +19,12 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
 momentjs:moment
-matthew:foundation5-sass
 iron:router
 mrt:meteor-flipclockjs
 yn5:curious-datetimepicker
 dburles:google-maps
 mdg:geolocation
-maibaum:foundation-icons
 sacha:spin
 propercursive:zeroclipboard
 fortawesome:fontawesome
+fourseven:scss
